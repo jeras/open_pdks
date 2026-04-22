@@ -297,13 +297,14 @@ endif
 
 FOSSI_URL = https://github.com/fossi-foundation
 GOOGLE_URL = https://foss-eda-tools.googlesource.com
+JERAS_URL = https://github.com/jeras
 
 # Names of library repositories
 PDK_LIB_PR = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_pr
 PDK_LIB_IO = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_io
 PDK_LIB_SC_HD = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_sc_hd
-PDK_LIB_SC_HDLL = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_sc_hdll
-PDK_LIB_SC_LP = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_sc_lp
+PDK_LIB_SC_HDLL = ${JERAS_URL}/skywater-pdk-libs-sky130_fd_sc_hdll
+PDK_LIB_SC_LP = ${JERAS_URL}/skywater-pdk-libs-sky130_fd_sc_lp
 PDK_LIB_SC_HS = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_sc_hs
 PDK_LIB_SC_MS = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_sc_ms
 PDK_LIB_SC_LS = ${FOSSI_URL}/skywater-pdk-libs-sky130_fd_sc_ls
@@ -1188,7 +1189,7 @@ klayout-%: ${KLAYOUT_PATH}
 		cp ${KLAYOUT_PATH}/tech/sky130/${TECH}.lyp ${KLAYOUT_STAGING_$*}/tech/${SKY130$*}.lyp ; \
 		cp ${KLAYOUT_PATH}/tech/sky130/${TECH}.lyt ${KLAYOUT_STAGING_$*}/tech/${SKY130$*}.lyt ; \
 		cp ${KLAYOUT_PATH}/tech/sky130/${TECH}.map ${KLAYOUT_STAGING_$*}/tech/${SKY130$*}.map ; \
-		${SED} -i "s/sky130.lyp/${SKY130$*}.lyp/g" ${KLAYOUT_STAGING_$*}/tech/${SKY130$*}.lyt ; \
+		${SED} -i.bak "s/sky130.lyp/${SKY130$*}.lyp/g" ${KLAYOUT_STAGING_$*}/tech/${SKY130$*}.lyt ; \
 		cp -p ${KLAYOUT_PATH}/tech/sky130/d25/* ${KLAYOUT_STAGING_$*}/d25/ ; \
 		cp -p ${KLAYOUT_PATH}/tech/sky130/lvs/* ${KLAYOUT_STAGING_$*}/lvs/ ; \
 		cp -p ${KLAYOUT_PATH}/tech/sky130/macros/* ${KLAYOUT_STAGING_$*}/macros/ ; \
