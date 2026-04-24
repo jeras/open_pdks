@@ -1,6 +1,6 @@
-`define TIE_CELL        sky130_fd_sc_hd__conb_1  
-`define FA_CELL         sky130_fd_sc_hd__fa_1  
-`define MUX2x1_CELL     sky130_fd_sc_hd__mux2_1
+`define TIE_CELL        sky130_fd_sc_lp__conb_1  
+`define FA_CELL         sky130_fd_sc_lp__fa_1  
+`define MUX2x1_CELL     sky130_fd_sc_lp__mux2_1
 
 // n-bit RCA using n FA instances
 module rca #(parameter n=32) ( 

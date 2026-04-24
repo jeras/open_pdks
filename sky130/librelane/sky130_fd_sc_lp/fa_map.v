@@ -1,4 +1,4 @@
-`define FA_CELL         sky130_fd_sc_hd__fa_1 
+`define FA_CELL         sky130_fd_sc_lp__fa_1 
 
 (* techmap_celltype = "$fa" *)
 module _90_fa (A, B, C, X, Y);
