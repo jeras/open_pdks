@@ -1,5 +1,5 @@
 module \$_DLATCH_P_ (input E, input D, output Q);
-  sky130_fd_sc_hd__dlxtp_1 _TECHMAP_DLATCH_P (
+  sky130_fd_sc_lp__dlxtp_1 _TECHMAP_DLATCH_P (
     //# {{data|Data Signals}}
     .D(D),
     .Q(Q),
@@ -10,7 +10,7 @@ module \$_DLATCH_P_ (input E, input D, output Q);
 endmodule
 
 module \$_DLATCH_N_ (input E, input D, output Q);
-  sky130_fd_sc_hd__dlxtn_1 _TECHMAP_DLATCH_N (
+  sky130_fd_sc_lp__dlxtn_1 _TECHMAP_DLATCH_N (
     //# {{data|Data Signals}}
     .D(D),
     .Q(Q),
