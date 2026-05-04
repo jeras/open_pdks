@@ -51,13 +51,10 @@ set ::env(SYNTH_MUX_MAP) "$::env(PDK_ROOT)/$::env(PDK)/libs.tech/librelane/$::en
 # Placement site for core cells
 # This can be found in the technology lef
 set ::env(PLACE_SITE) "unit"
-#set ::env(PLACE_SITE_WIDTH) 0.480 # REDUNDANT
-#set ::env(PLACE_SITE_HEIGHT) 3.330 # REDUNDANT
 
 # EXTRA_SITES ???
 
 # welltap and endcap cells
-# FP_ prefix is DEPRECATED
 set ::env(WELLTAP_CELL) "sky130_fd_sc_lp__tapvpwrvgnd_1"
 set ::env(ENDCAP_CELL) "sky130_fd_sc_lp__decap_3"
 
@@ -78,7 +75,7 @@ set ::env(SYNTH_CLK_DRIVING_CELL) "sky130_fd_sc_lp__clkinv_2/Y"
 # capacitance : 0.0059500000; # sky130_fd_sc_lp__ss_n40C_1v55.lib.part2
 # capacitance : 0.0060000000; # sky130_fd_sc_lp__ss_n40C_1v60.lib.part2
 # capacitance : 0.0059900000; # sky130_fd_sc_lp__ss_n40C_1v65.lib.part2
-#set ::env(SYNTH_DRIVING_CELL_PIN) "Y" ; # DEPRECATED
+
 # update these
 #set ::env(OUTPUT_CAP_LOAD) "50.400" ; # femtofarad __inv_16 pin A cap (sky130_fd_sc_lp__ff_100C_1v95.lib.part3)
 #set ::env(OUTPUT_CAP_LOAD) "53.570" ; # femtofarad __inv_16 pin A cap (sky130_fd_sc_lp__ff_125C_3v15.lib.part2)
