@@ -994,8 +994,8 @@ primitive-%:
         # Install tech LEF and primitive devices from vendor files
 	${STAGE} -source ${GF180MCU_PR_PATH} \
 		-target ${STAGING_PATH}/${GF180MCU$*} \
-		-ngspice models/ngspice/*.ngspice \
-		-xyce models/xyce/*.xyce \
+		-ngspice models/ngspice/*.spice \
+		-xyce models/xyce/*.spice \
 		2>&1 | tee -a ${GF180MCU$*}_make.log
 	# Install primitive device fixed layout cells from GDS
 	${STAGE} -source ${GF180MCU_PR_PATH} \
@@ -1003,6 +1003,22 @@ primitive-%:
 		-gds cells/klayout/pymacros/cells/*/*.gds noextract \
 		-library primitive gf180mcu_fd_pr \
 		2>&1 | tee -a ${GF180MCU$*}_make.log
+	# Files in libs.tech/ngspice used to have a ".ngspice" suffix.  To
+	# avoid breaking existing simulation testbenches that may point to
+	# the original name, make a symbolic link.
+	for file in ${STAGING_PATH}/${GF180MCU$*}/libs.tech/ngspice/*.spice ; do \
+		name=$$(basename $$file); \
+		rootname=$${name%.*}; \
+		(cd ${STAGING_PATH}/${GF180MCU$*}/libs.tech/ngspice ; \
+		ln -s $${rootname}.spice $${rootname}.ngspice ); \
+	done
+	# Similarly for the files formerly named ".xyce".
+	for file in ${STAGING_PATH}/${GF180MCU$*}/libs.tech/xyce/*.spice ; do \
+		name=$$(basename $$file); \
+		rootname=$${name%.*}; \
+		(cd ${STAGING_PATH}/${GF180MCU$*}/libs.tech/xyce ; \
+		ln -s $${rootname}.spice $${rootname}.xyce ); \
+	done
 	# Add "device primitive" property to the bipolar devices and
 	# order the ports correctly to match the subcircuit model.  This
 	# ensures that the bipolar layouts extract correctly.
