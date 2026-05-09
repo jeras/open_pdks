@@ -101,14 +101,20 @@ Cells are excluded from synthesis:
   - `decaphe` - _hielded Decoupling capacitance filler_
   - `decaphetap` ???
 - `dlclk*` - _clock gate_ (Delay Latch ICG (Integrated Clock Gate))
-- `dl*` _delay latch_
+- `dl*` _delay latch_ TODO
 - `dlgate*` - _delay buffer_
 - `dlmetal*` - _N-inverter delay with output from M-nd stage on horizontal route_
 
 - `einv*` - _tri-state inverter_
 - `ha` - _half adder_
 
+- `inputiso*` - _input isolator_
+
 - `macro_sparecell` - _macro cell for metal-mask-only revisioning, containing inverter, 2-input NOR, 2-input NAND, and constant cell_
+
+- `probe_p` - Virtual voltage probe point.
+- `probec_p` - Virtual current probe point.
+
 
 - `maj3` - _3-input majority vote_
 - `mux2i` - _2-input multiplexer, output inverted_
